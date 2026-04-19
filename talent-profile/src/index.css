@@ -1,5 +1,26 @@
+/* src/index.css */
 @import "tailwindcss";
 
 :root {
-  --brand-color: #6366f1;
+  /* Primary Actions */
+  --color-primary: #6366f1;         /* Main Brand (Indigo) */
+  --color-primary-hover: #4f46e5;   /* Darker Indigo */
+  --color-primary-text: #ffffff;
+  
+  /* Secondary Actions */
+  --color-secondary: #ffffff;
+  --color-secondary-hover: #f8fafc; /* Very light slate */
+  --color-secondary-border: #e2e8f0; 
+  --color-secondary-text: #334155; 
+
+  /* Surface / Backgrounds */
+  --color-surface: #ffffff;
+  --color-ground: #f1f5f9;         /* App Background */
+  
+  /* Typography */
+  --color-text-main: #0f172a;
+  --color-text-muted: #64748b;
+  
+  /* Accents */
+  --color-accent: #06b6d4;         /* Cyan for special badges */
 }

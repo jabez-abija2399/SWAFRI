@@ -17,16 +17,15 @@ export const TalentForm = ({
     isValid
 }: TalentFormProps) => {
     return (
-        <div>
-
+        <div className="bg-surface p-8 rounded-2xl shadow-lg border border-secondary-border max-w-2xl">
             {/* header Section */}
-            <div>
-                <h2>Create Talent Profile</h2>
-                <p>Showcase your skills to the world</p>
+            <div className="mb-8">
+                <h2 className="text-2xl font-bold text-text-main">Create Talent Profile</h2>
+                <p className="text-text-muted mt-1">Showcase your skills to the world</p>
             </div>
 
             {/* Teh form Grid */}
-            <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
                     label="Full Name"
                     name="fullName"
@@ -82,7 +81,7 @@ export const TalentForm = ({
             </div>
 
             {/* Action Section */}
-            <div>
+            <div className="mt-8 flex justify-end">
                 <Button
                     onClick={onSubmit}
                     disabled={!isValid}

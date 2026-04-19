@@ -1,38 +1,28 @@
 import { TalentForm } from "./components/profile/TalentForm";
+import { ProfileCard } from "./components/profile/ProfileCard"; 
 import { UseTalentProfile } from "./hook/useTalentProfile";
 
-
 function App() {
-
-  const {profile, handleChange, handleSubmit, isFormValid, view} = UseTalentProfile();
+  const { profile, handleChange, handleSubmit, handleEdit, isSenior, isFormValid, view } = UseTalentProfile();
 
   return (
-    <main>
-
-      {/* conditional rendering */}
+    <main className="min-h-screen bg-ground flex items-center justify-center p-6">
       {view === "FORM" ? (
         <TalentForm
-        profile={profile}
-        onChange={handleChange}
-        onSubmit={handleSubmit}
-        isValid={isFormValid}
+          profile={profile}
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+          isValid={isFormValid}
         />
-      ):(
-        <div>
-          <h1>Success!</h1>
-          <p>Form logic is working/ Now we just need the profile car</p>
-
-          <button
-          onClick={() => window.location.reload()}
-          className="mt-6 text-primary font-medium hover:underline"
-          >
-            Reset Form
-          </button>
-        </div>
+      ) : (
+        <ProfileCard 
+            profile={profile} 
+            isSenior={isSenior} 
+            onEdit={handleEdit} 
+        />
       )}
     </main>
-
-  )
+  );
 }
 
-export default App
+export default App;

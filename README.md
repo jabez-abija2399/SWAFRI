@@ -32,6 +32,7 @@ npm install
 
 # Starts the Vite dev server
 npm run dev
+```
 
 ## 📂 Project Structure
 To keep the UI "pure" and the logic "reusable," I organized the project as follows:

@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# 🌟 Talent Profile Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, modern web application that allows users to create and preview their professional talent profiles in real-time.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+**View the live site:** [https://talent-profile-two.vercel.app/](https://talent-profile-two.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠 Tech Stack
+- **React 19**: Utilizing modern functional components and hooks.
+- **TypeScript**: Ensuring strict type safety and reducing runtime errors.
+- **Tailwind CSS v4**: High-performance, utility-first styling.
+- **Vite**: Ultra-fast build tool and development server.
 
-## React Compiler
+## ✨ Key Features
+- **Separation of Concerns**: Business logic is isolated in a custom hook.
+- **Responsive Design**: Fully optimized for mobile and desktop screens.
+- **Validation**: Automatic email validation and "Senior" experience badging.
+- **Smooth UX**: Instant switching between Form and Profile views with zero reload.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📦 Getting Started
 
-## Expanding the ESLint configuration
+### 1. Clone & Setup
+```bash
+# Clone the repository to your local machine
+git clone https://github.com/jabez-abija2399/talent-profile
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Navigate into the project folder
+cd talent-profile 
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Install all dependencies (react, tailwind, etc.)
+npm install 
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Starts the Vite dev server
+npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📂 Project Structure
+To keep the UI "pure" and the logic "reusable," I organized the project as follows:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- `src/hook/`: 🧠 Contains `useTalentProfile.ts` (all state & logic).
+- `src/components/profile/`: 🎨 Contains the main page views (`TalentForm`, `ProfileCard`).
+- `src/components/ui/`: 🧩 Contains reusable primitives (`Button`, `Input`).
+- `src/types.ts`: 🏷 Provides type safety for the user data.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```

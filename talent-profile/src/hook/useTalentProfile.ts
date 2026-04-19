@@ -23,7 +23,7 @@ export const UseTalentProfile = () => {
     };
 
     const isSenior = profile.yearsOfExp >= 5;
-    const isFormValid = profile.fullName && profile.email && profile.primarySkill;
+    const isFormValid = !!(profile.fullName && profile.email && profile.primarySkill);
 
     const handleSubmit = () => {
         if (isFormValid) setView("PROFILE")

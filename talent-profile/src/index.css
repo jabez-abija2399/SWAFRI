@@ -1,7 +1,7 @@
 /* src/index.css */
 @import "tailwindcss";
 
-:root {
+@theme {
   /* Primary Actions */
   --color-primary: #6366f1;         /* Main Brand (Indigo) */
   --color-primary-hover: #4f46e5;   /* Darker Indigo */

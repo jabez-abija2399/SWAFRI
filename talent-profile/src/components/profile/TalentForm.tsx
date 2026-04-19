@@ -38,7 +38,7 @@ export const TalentForm = ({
 
                 <Input
                     label="Email Address"
-                    name="email:"
+                    name="email"
                     id="email"
                     type="email"
                     placeholder="yabets@gmail.com"

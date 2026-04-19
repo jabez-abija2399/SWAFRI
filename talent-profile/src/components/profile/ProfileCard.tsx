@@ -1,4 +1,5 @@
 import type { TalentProfile } from "../../types";
+import { cn } from "../../utils/cn";
 
 interface ProfileCardProps {
     profile: TalentProfile;
@@ -42,8 +43,11 @@ export const ProfileCard = ({ profile, isSenior, onEdit }: ProfileCardProps) => 
                         <span className="text-text-muted text-sm font-medium uppercase tracking-wider">Experience</span>
                         <span className="text-text-main font-bold">{profile.yearsOfExp} Years</span>
                     </div>
-                    <p className="text-text-secondary leading-relaxed italic">
-                        "{profile.description}"
+                    <p className={cn(
+                        "text-text-secondary leading-relaxed",
+                        !profile.description && "text-text-muted italic" 
+                    )}>
+                        {profile.description || "No description provided yet."}
                     </p>
                 </div>
 

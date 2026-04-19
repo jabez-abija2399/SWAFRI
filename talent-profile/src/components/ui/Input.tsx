@@ -45,6 +45,7 @@ export const Input = ({
             {multiline ? (
                 <textarea
                 id={id}
+                 aria-invalid={!!error}
                 className={cn(
                     "min-h-[100px] resize-y", sharedClasses)}
                     {...(props as TextareaHTMLAttributes<HTMLTextAreaElement>)}
@@ -52,6 +53,7 @@ export const Input = ({
             ):(
             <input
                 id={id}
+                aria-invalid={!!error}
                 className={sharedClasses}
                 {...(props as InputHTMLAttributes<HTMLInputElement>)}
             />
